@@ -1,0 +1,35 @@
+.row {
+  margin-top: 15vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+  color: #FFD700;
+}
+footer {
+  position:absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: x-large;
+  }
+  .row {
+    margin-top: 5vh;
+  }
+  .col-5 {
+    width: 100%;
+  }
+  .col-7 {
+    margin-top: 10%;
+    width: 100%;
+  }
+  
+}
