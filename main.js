@@ -3,13 +3,14 @@ let id = "no";
 // localStorage.clear()
 selectData();
 
-// Manage crud data 
-function manageData() {
+// Manage crud data
+function manageData(e) {
+  
   let name = document.getElementById("name").value;
   if (name == "") {
     document.getElementById("msg").innerHTML = "Please enter note";
   } else {
-    console.log(id)
+    console.log(id);
     if (id == "no") {
       let arr = getCrudData();
       if (arr == null) {
@@ -58,7 +59,7 @@ function deleteData(rid) {
 
 // Edit note function
 function editData(rid) {
-  id=rid;
+  id = rid;
   let arr = getCrudData();
   document.getElementById("name").value = arr[rid];
 }
@@ -73,3 +74,16 @@ function getCrudData() {
 function setCrudData(arr) {
   localStorage.setItem("crud", JSON.stringify(arr));
 }
+
+// Display notes on enter key
+
+document.getElementById("name").addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("btn").click();
+  
+  }
+});
